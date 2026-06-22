@@ -70,7 +70,7 @@ else:
     if st.sidebar.button("Activate Premium Tier ($10/mo)"):
         st.sidebar.success("Stripe integration link coming soon! Ask your parent for setup help.")
 
-    # 🚀 FIVE TAB SYSTEM (Now includes the User Manual!)
+    # 🚀 FIVE TAB SYSTEM
     tab1, tab2, tab3, tab4, tab5 = st.tabs([
         "📧 EMAIL SCANNER (FREE)", 
         "📁 FILE SCANNER (PREMIUM)", 
@@ -96,9 +96,9 @@ else:
                 st.session_state.stats["email_scans"] += 1
                 st.session_state.stats["safe_files"] += 1
 
-        # History Display Log
+        # 🧼 CLEAN HISTORY LOG AREA (Old Netflix alert removed)
         st.subheader("🗓️ SCAN HISTORY EVENTS")
-        st.warning("⚠️ Warning Event Logged:\n\nSender: 'support-update@netflix-verify-net.com'\nMessage: 'Hey Please buy our new 70$ plan for a week thank you, Netflix Team...'")
+        st.info("No recent threat events logged. System is clear and monitoring.")
 
     with tab2:
         st.header("Multi-Engine Archive Check")
@@ -128,16 +128,15 @@ else:
             st.write("🔴 **Daily Pop-ups:** Constantly begs you to buy more expensive upgrades.")
             st.write("🔴 **No Direct Help:** Good luck reaching a real human if you get hacked.")
 
-    # 📖 NEW MANUAL TAB
     with tab5:
         st.header("📖 Quick Start User Guide")
         st.write("ByteGuard AI keeps your business safe in 3 basic steps:")
         st.markdown("---")
-        st.write("### ️⃣ Step 1: Keep This Tab Open")
+        st.write("### 1️⃣ Step 1: Keep This Tab Open")
         st.write("Bookmark this website page in your web browser so you can access it instantly whenever you look at your workload.")
         
-        st.write("### ️⃣ Step 2: Paste Weird Messages")
+        st.write("### 2️⃣ Step 2: Paste Weird Messages")
         st.write("If you get an unexpected email or invoice link, copy the text and paste it directly into the **Email Scanner** tab.")
         
-        st.write("### ️⃣ Step 3: Check Before You Click")
+        st.write("### 3️⃣ Step 3: Check Before You Click")
         st.write("Click the Scan button. If our system shows a green box, you are clear. If it flashes red, delete the message immediately to save your files.")
