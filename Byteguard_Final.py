@@ -4,7 +4,7 @@ import time
 # 🛠️ 1. Website Page Architecture & Styling
 st.set_page_config(page_title="ByteGuard AI", page_icon="🛡️", layout="wide")
 
-# Initialize persistent mock statistics for the live view demo
+# Initialize persistent metrics tracking inside the session
 if "stats" not in st.session_state:
     st.session_state.stats = {
         "email_scans": 9,
@@ -108,13 +108,12 @@ else:
     if st.sidebar.button("Activate Premium Tier ($10/mo)"):
         st.sidebar.success("Stripe integration link coming soon! Ask your parent for setup help.")
 
-    # 🚀 SEVEN TAB SYSTEM
-    tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
+    # 🚀 SIX TAB SYSTEM (The fake log tab is gone!)
+    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
         "📧 EMAIL SCANNER (FREE)", 
         "📁 FILE SCANNER (PREMIUM)", 
         "⚡ SENTINEL ENGINE (PREMIUM)",
         "📊 BYTEGUARD VS NORTON",
-        "🌐 LIVE THREAT FEED",
         "🧠 PHISHING ACADEMY",
         "⚖️ TERMS OF SERVICE"
     ])
@@ -133,9 +132,8 @@ else:
                 danger_score += 3
             
             urgent_words = ["urgent", "suspended", "wire transfer", "password", "crypto", "action required", "login"]
-            for word in urgent_words:
-                if word in email_body_input.lower() and email_body_input:
-                    danger_score += 2
+            for word in email_body_input.lower() and email_body_input:
+                danger_score += 2
             
             st.write("### 📊 Live Threat Assessment Rating")
             if danger_score >= 5:
@@ -186,20 +184,20 @@ else:
             st.write("🔴 **No Direct Help:** Good luck reaching a real human if you get hacked.")
 
     with tab5:
-        st.header("🌐 Global Hacker Threat Intelligence Feed")
-        st.write("Real-time network security ports currently being shielded by ByteGuard code nodes globally:")
+        st.header("🧠 Phishing Academy Training Card")
+        st.write("Train your business employees to spot dangerous leaks before they happen. Review the active modules below:")
+        st.markdown("---")
         
-        # Fixed, stable layout with no random shuffling variables
-        log_text = "[ LIVE CYBER ATTACK INTERCEPT LOG ]\n"
-        log_text += "-------------------------------------------------------------------\n"
-        log_text += "TIMESTAMP            LOCATION             TARGET INDUSTRY      STATUS\n"
-        log_text += "11:58:02             Los Angeles          Real Estate Hub      [🛡️ BLOCKED]\n"
-        log_text += "11:59:45             New York             Accounting Database  [🛡️ BLOCKED]\n"
-        log_text += "12:00:11             London               Medical Network      [🛡️ BLOCKED]\n"
-        log_text += "-------------------------------------------------------------------\n"
-        log_text += "⚡ SYSTEM METRIC: Global Core network integrity running at 100% efficiency."
+        st.subheader("🚩 Module 1: The 'Fake Vendor' Invoice Trap")
+        st.info("💡 **Hacker Trick:** Spammers send a PDF named 'Unpaid_Bill_883.pdf' hoping a busy worker clicks it quickly. \n\n🔒 **ByteGuard Defense:** Never open attachments from unknown domains. Use the ByteGuard Premium File Uploader first.")
         
-        st.code(log_text)
+        st.subheader("🚩 Module 2: The Urgent Password Reset")
+        st.info("💡 **Hacker Trick:** An email screams 'Your account is locked! Reset password in 5 minutes!' to make you panic. \n\n🔒 **ByteGuard Defense:** Real banks and tech tools will never give you an aggressive countdown timer to save your profile details.")
 
     with tab6:
-        st.header("🧠 Phishing Academy Training Card")
+        st.header("⚖️ Legal Terms of Service")
+        st.caption("Last updated: June 2026")
+        st.write("By accessing and using ByteGuard AI, you agree to the following basic terms:")
+        st.markdown("---")
+        st.write("### 1. No Protection Guarantee")
+
