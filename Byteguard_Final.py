@@ -109,7 +109,7 @@ else:
     if st.sidebar.button("Activate Premium Tier ($10/mo)"):
         st.sidebar.success("Stripe integration link coming soon! Ask your parent for setup help.")
 
-    # 🚀 SEVEN TAB SYSTEM (Now includes global maps and academy modules!)
+    # 🚀 SEVEN TAB SYSTEM
     tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
         "📧 EMAIL SCANNER (FREE)", 
         "📁 FILE SCANNER (PREMIUM)", 
@@ -138,7 +138,6 @@ else:
                 if word in email_body_input.lower() and email_body_input:
                     danger_score += 2
             
-            # Feature 1: Live Visual Threat Gauge Meter
             st.write("### 📊 Live Threat Assessment Rating")
             if danger_score >= 5:
                 st.error(f"🔴 CRITICAL THREAT LEVEL (Score: {danger_score}/10)")
@@ -187,18 +186,22 @@ else:
             st.write("🔴 **Daily Pop-ups:** Constantly begs you to buy more expensive upgrades.")
             st.write("🔴 **No Direct Help:** Good luck reaching a real human if you get hacked.")
 
-    # Feature 2: Real-Time Interactive Global Threat Log
     with tab5:
         st.header("🌐 Global Hacker Threat Intelligence Feed")
         st.write("Real-time network security ports currently being shielded by ByteGuard code nodes globally:")
         
-        # Generates fresh random mock attacks each time they click or load!
         locations = ["Los Angeles", "New York", "London", "Tokyo", "Paris", "Sydney", "Berlin"]
         targets = ["Real Estate Hub", "Medical Server", "Retail Portal", "Accounting DB", "Legal Network"]
         
-        st.code(f"""
-        [ LIVE CYBER ATTACK INTERCEPT LOG ]
-        -------------------------------------------------------------------
-        TIMESTAMP            LOCATION             TARGET INDUSTRY      STATUS
-        {time.strftime('%H:%M:%S')}             {random.choice(locations)}          {random.choice(targets)}     [🛡️ BLOCKED]
-        {time.strftime('%H:%M:%A')}             {random.choice(locations)}          {random.choice(targets)}     [🛡️ BLOCKED]
+        # Fixed syntax bug layout
+        current_time = time.strftime('%H:%M:%S')
+        loc_1 = random.choice(locations)
+        loc_2 = random.choice(locations)
+        targ_1 = random.choice(targets)
+        targ_2 = random.choice(targets)
+        
+        log_text = f"[ LIVE CYBER ATTACK INTERCEPT LOG ]\n"
+        log_text += f"-------------------------------------------------------------------\n"
+        log_text += f"TIMESTAMP            LOCATION             TARGET INDUSTRY      STATUS\n"
+        log_text += f"{current_time}             {loc_1}          {targ_1}     [🛡️ BLOCKED]\n"
+        log_text += f"{current_time}             {loc_2}          {targ_2}     [🛡️ BLOCKED]\n"
