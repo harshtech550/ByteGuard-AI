@@ -56,20 +56,21 @@ if is_admin:
 # --- 🌐 IF LOGGED OUT, SHOW THE BEAUTIFUL CLIENT WEBPAGE ---
 else:
     st.title("🛡️ ByteGuard AI Portal")
-    st.write("The lightweight defense shield for Porter Ranch small businesses. Protect your files and links instantly.")
+    # 🌍 UPDATED LINE: Changed to 'for every business' to target the whole world!
+    st.write("The lightweight defense shield for every business. Protect your files and links instantly.")
     st.markdown("---")
 
     # PREMIUM MONETIZATION SIDEBAR CARD ($10/Month Goal)
     st.sidebar.title("💎 ByteGuard Premium")
     st.sidebar.write("🔒 Multi-Engine Malware Scanner")
     st.sidebar.write("⚡ 0% Computer System Lag")
-    st.sidebar.write("👥 Local 1-on-1 Help Line")
+    st.sidebar.write("👥 1-on-1 Help Line")
     st.sidebar.markdown("---")
     st.sidebar.subheader("💰 Subscription")
     if st.sidebar.button("Activate Premium Tier ($10/mo)"):
         st.sidebar.success("Stripe integration link coming soon! Ask your parent for setup help.")
 
-    # 🚀 FOUR TAB SYSTEM (Includes the Sentinel Mode!)
+    # 🚀 FOUR TAB SYSTEM (Includes Sentinel Mode and the updated Text!)
     tab1, tab2, tab3, tab4 = st.tabs([
         "📧 EMAIL SCANNER (FREE)", 
         "📁 FILE SCANNER (PREMIUM)", 
@@ -118,7 +119,7 @@ else:
             st.subheader("🛡️ ByteGuard AI ($10/mo)")
             st.write("✅ **0% Computer Slowdown:** Runs entirely in your web browser. No heavy apps.")
             st.write("✅ **No Annoying Ads:** Zero pop-ups. We do one job and stay quiet.")
-            st.write("✅ **Local Support:** Text a real local developer in Porter Ranch if you get stuck.")
+            st.write("✅ **Direct Support:** Contact a real developer if you get stuck.")
             
         with col2:
             st.subheader("❌ Giant Tech (Norton)")
