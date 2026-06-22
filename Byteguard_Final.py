@@ -55,7 +55,6 @@ if is_admin:
 
 # --- 🌐 IF LOGGED OUT, SHOW THE BEAUTIFUL CLIENT WEBPAGE ---
 else:
-    # ✨ CLEAN TECH LOGO & SUBHEADER (No more blocky ASCII graphics)
     st.title("🛡️ BYTEGUARD AI")
     st.caption("⚡ [ SYSTEM STATUS: SECURE CORE ONLINE ]")
     st.write("The lightweight defense shield for every business. Protect your files and links instantly.")
@@ -71,12 +70,13 @@ else:
     if st.sidebar.button("Activate Premium Tier ($10/mo)"):
         st.sidebar.success("Stripe integration link coming soon! Ask your parent for setup help.")
 
-    # 🚀 FOUR TAB SYSTEM
-    tab1, tab2, tab3, tab4 = st.tabs([
+    # 🚀 FIVE TAB SYSTEM (Now includes the User Manual!)
+    tab1, tab2, tab3, tab4, tab5 = st.tabs([
         "📧 EMAIL SCANNER (FREE)", 
         "📁 FILE SCANNER (PREMIUM)", 
         "⚡ SENTINEL ENGINE (PREMIUM)",
-        "📊 BYTEGUARD VS NORTON"
+        "📊 BYTEGUARD VS NORTON",
+        "📖 HOW TO USE"
     ])
 
     with tab1:
@@ -127,3 +127,17 @@ else:
             st.write("🔴 **Hogs Memory:** Heavy software slows down your laptop and games.")
             st.write("🔴 **Daily Pop-ups:** Constantly begs you to buy more expensive upgrades.")
             st.write("🔴 **No Direct Help:** Good luck reaching a real human if you get hacked.")
+
+    # 📖 NEW MANUAL TAB
+    with tab5:
+        st.header("📖 Quick Start User Guide")
+        st.write("ByteGuard AI keeps your business safe in 3 basic steps:")
+        st.markdown("---")
+        st.write("### ️⃣ Step 1: Keep This Tab Open")
+        st.write("Bookmark this website page in your web browser so you can access it instantly whenever you look at your workload.")
+        
+        st.write("### ️⃣ Step 2: Paste Weird Messages")
+        st.write("If you get an unexpected email or invoice link, copy the text and paste it directly into the **Email Scanner** tab.")
+        
+        st.write("### ️⃣ Step 3: Check Before You Click")
+        st.write("Click the Scan button. If our system shows a green box, you are clear. If it flashes red, delete the message immediately to save your files.")
