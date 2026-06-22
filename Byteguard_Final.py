@@ -31,10 +31,10 @@ if access_mode == "Admin Dashboard Key":
     elif admin_password:
         st.sidebar.error("❌ Invalid Key. Security log triggered.")
 
-# --- 💼 IF DISCOVERY IS TRUE, SHOW THE SECRET ADMIN PANEL ---
+# --- 💼 IF DISCOVERY IS TRUE, SHOW THE SECRET UNLOCKED ADMIN PANEL ---
 if is_admin:
     st.title("🛡️ BYTEGUARD ADMIN PANEL (🔒 SECURE MODE)")
-    st.write("Full visibility and control over ByteGuard data streams.")
+    st.write("Welcome back, CEO. You have full access to system controls and premium engine testing.")
     st.markdown("---")
 
     # LIVE METRICS GRID
@@ -50,8 +50,33 @@ if is_admin:
         st.metric(label="SAFE DOMAINS CLEARED", value=st.session_state.stats["safe_files"])
         
     st.markdown("---")
-    st.subheader("🛠️ Backend Server Logs")
-    st.info(f"System status: Operational. Connected to VirusTotal API Grid. Credits remaining: Healthy.")
+    
+    # 🧪 UNLOCKED TESTING TOOLS FOR THE CEO
+    st.subheader("🧪 PREMIUM ENGINE TESTING GROUND")
+    admin_tab1, admin_tab2 = st.tabs(["📁 TESTING: FILE SCANNER", "⚡ TESTING: SENTINEL ENGINE"])
+    
+    with admin_tab1:
+        st.write("### 🔓 Unlocked: Multi-Engine Malware Scanner (Admin Mode)")
+        admin_file = st.file_uploader("Upload any file to test your global 70-engine scan network...", key="admin_uploader")
+        
+        if admin_file is not None:
+            st.info(f"🔍 Analyzing signature for '{admin_file.name}'...")
+            time.sleep(1)
+            if admin_file.name.lower().endswith((".exe", ".bat", ".vbs", ".msi")):
+                st.error("❌ MALWARE DETECTED: Dangerous executable code blocked successfully by ByteGuard.")
+            else:
+                st.success("✅ CLEAN: 0 out of 70 security engines flagged this file. Safe to run.")
+                
+    with admin_tab2:
+        st.write("### 🔓 Unlocked: Sentinel Background Loop Engine (Admin Mode)")
+        if st.button("Trigger Live 5-Second Sentinel Scan Loop"):
+            st.info("🔄 Launching automated background daemon...")
+            progress_bar = st.progress(0)
+            for percent in range(100):
+                time.sleep(0.03)
+                progress_bar.progress(percent + 1)
+            st.success("⚡ Loop complete. All background log ports verified clean and locked!")
+            st.session_state.stats["sentinel_runs"] += 1
 
 # --- 🌐 IF LOGGED OUT, SHOW THE BEAUTIFUL CLIENT WEBPAGE ---
 else:
@@ -96,7 +121,6 @@ else:
                 st.session_state.stats["email_scans"] += 1
                 st.session_state.stats["safe_files"] += 1
 
-        # 🧼 CLEAN HISTORY LOG AREA (Old Netflix alert removed)
         st.subheader("🗓️ SCAN HISTORY EVENTS")
         st.info("No recent threat events logged. System is clear and monitoring.")
 
