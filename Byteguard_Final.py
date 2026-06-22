@@ -1,6 +1,5 @@
 import streamlit as st
 import time
-import random
 
 # 🛠️ 1. Website Page Architecture & Styling
 st.set_page_config(page_title="ByteGuard AI", page_icon="🛡️", layout="wide")
@@ -190,18 +189,17 @@ else:
         st.header("🌐 Global Hacker Threat Intelligence Feed")
         st.write("Real-time network security ports currently being shielded by ByteGuard code nodes globally:")
         
-        locations = ["Los Angeles", "New York", "London", "Tokyo", "Paris", "Sydney", "Berlin"]
-        targets = ["Real Estate Hub", "Medical Server", "Retail Portal", "Accounting DB", "Legal Network"]
+        # Fixed, stable layout with no random shuffling variables
+        log_text = "[ LIVE CYBER ATTACK INTERCEPT LOG ]\n"
+        log_text += "-------------------------------------------------------------------\n"
+        log_text += "TIMESTAMP            LOCATION             TARGET INDUSTRY      STATUS\n"
+        log_text += "11:58:02             Los Angeles          Real Estate Hub      [🛡️ BLOCKED]\n"
+        log_text += "11:59:45             New York             Accounting Database  [🛡️ BLOCKED]\n"
+        log_text += "12:00:11             London               Medical Network      [🛡️ BLOCKED]\n"
+        log_text += "-------------------------------------------------------------------\n"
+        log_text += "⚡ SYSTEM METRIC: Global Core network integrity running at 100% efficiency."
         
-        # Fixed syntax bug layout
-        current_time = time.strftime('%H:%M:%S')
-        loc_1 = random.choice(locations)
-        loc_2 = random.choice(locations)
-        targ_1 = random.choice(targets)
-        targ_2 = random.choice(targets)
-        
-        log_text = f"[ LIVE CYBER ATTACK INTERCEPT LOG ]\n"
-        log_text += f"-------------------------------------------------------------------\n"
-        log_text += f"TIMESTAMP            LOCATION             TARGET INDUSTRY      STATUS\n"
-        log_text += f"{current_time}             {loc_1}          {targ_1}     [🛡️ BLOCKED]\n"
-        log_text += f"{current_time}             {loc_2}          {targ_2}     [🛡️ BLOCKED]\n"
+        st.code(log_text)
+
+    with tab6:
+        st.header("🧠 Phishing Academy Training Card")
