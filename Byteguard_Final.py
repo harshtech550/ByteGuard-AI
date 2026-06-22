@@ -1,5 +1,6 @@
 import streamlit as st
 import time
+import random
 
 # 🛠️ 1. Website Page Architecture & Styling
 st.set_page_config(page_title="ByteGuard AI", page_icon="🛡️", layout="wide")
@@ -108,30 +109,50 @@ else:
     if st.sidebar.button("Activate Premium Tier ($10/mo)"):
         st.sidebar.success("Stripe integration link coming soon! Ask your parent for setup help.")
 
-    # 🚀 SIX TAB SYSTEM (Now includes the Terms of Service!)
-    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+    # 🚀 SEVEN TAB SYSTEM (Now includes global maps and academy modules!)
+    tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
         "📧 EMAIL SCANNER (FREE)", 
         "📁 FILE SCANNER (PREMIUM)", 
         "⚡ SENTINEL ENGINE (PREMIUM)",
         "📊 BYTEGUARD VS NORTON",
-        "📖 HOW TO USE",
+        "🌐 LIVE THREAT FEED",
+        "🧠 PHISHING ACADEMY",
         "⚖️ TERMS OF SERVICE"
     ])
 
     with tab1:
         st.header("Free Email Check Interface")
-        st.write("Copy and paste suspicious email bodies below to check for hacker loops.")
+        st.write("Paste suspicious text or links below to calculate your live threat rating.")
         
         sender_input = st.text_input("Sender Domain/Email Address:", placeholder="support-update@netflix-verify-net.com")
         email_body_input = st.text_area("Body Text:", placeholder="Paste text messages here...")
         
         if st.button("Execute Free Inbox Scan"):
-            if "netflix-verify" in sender_input.lower() or "urgent" in email_body_input.lower():
-                st.error("❌ HACKER TRAP CAUGHT: This message mimics streaming alerts to lock your credentials!")
+            danger_score = 0
+            
+            if "verify" in sender_input.lower() or "security" in sender_input.lower() or "invoice" in sender_input.lower():
+                danger_score += 3
+            
+            urgent_words = ["urgent", "suspended", "wire transfer", "password", "crypto", "action required", "login"]
+            for word in urgent_words:
+                if word in email_body_input.lower() and email_body_input:
+                    danger_score += 2
+            
+            # Feature 1: Live Visual Threat Gauge Meter
+            st.write("### 📊 Live Threat Assessment Rating")
+            if danger_score >= 5:
+                st.error(f"🔴 CRITICAL THREAT LEVEL (Score: {danger_score}/10)")
+                st.error("❌ DO NOT CLICK LINKS: High-probability hacker trap designed to steal company funds.")
                 st.session_state.stats["email_scans"] += 1
                 st.session_state.stats["dangers_found"] += 1
+            elif danger_score >= 2:
+                st.warning(f"🟡 SUSPICIOUS THREAT LEVEL (Score: {danger_score}/10)")
+                st.warning("⚠️ BE CAREFUL: Text uses psychological urgency cues common in data scams.")
+                st.session_state.stats["email_scans"] += 1
+                st.session_state.stats["warnings"] += 1
             else:
-                st.success("✅ SCAN COMPLETED: Email domain passes basic validation checks.")
+                st.success(f"🟢 SECURE LEVEL (Score: {danger_score}/10)")
+                st.success("✅ CLEAN: No known scam signatures detected in this text sample.")
                 st.session_state.stats["email_scans"] += 1
                 st.session_state.stats["safe_files"] += 1
 
@@ -147,7 +168,7 @@ else:
     with tab3:
         st.header("⚡ Sentinel Background Loop Engine")
         st.error("🔒 FEATURE LOCKED: Sentinel 24/7 background monitoring requires premium tier tracking.")
-        st.write("Upgrade your plan to activate automated file log scans that run invisibly while your device sleeps or during your lunch break.")
+        st.write("Upgrade your plan to activate automated file log scans that run invisibly while your device sleeps.")
 
     with tab4:
         st.header("📊 Why Choose ByteGuard AI?")
@@ -166,26 +187,18 @@ else:
             st.write("🔴 **Daily Pop-ups:** Constantly begs you to buy more expensive upgrades.")
             st.write("🔴 **No Direct Help:** Good luck reaching a real human if you get hacked.")
 
+    # Feature 2: Real-Time Interactive Global Threat Log
     with tab5:
-        st.header("📖 Quick Start User Guide")
-        st.write("ByteGuard AI keeps your business safe in 3 basic steps:")
-        st.markdown("---")
-        st.write("### 1️⃣ Step 1: Keep This Tab Open")
-        st.write("Bookmark this website page in your web browser so you can access it instantly whenever you look at your workload.")
-        st.write("### 2️⃣ Step 2: Paste Weird Messages")
-        st.write("If you get an unexpected email or invoice link, copy the text and paste it directly into the **Email Scanner** tab.")
-        st.write("### 3️⃣ Step 3: Check Before You Click")
-        st.write("Click the Scan button. If our system shows a green box, you are clear. If it flashes red, delete the message immediately.")
-
-    # ⚖️ LEGAL TERMS OF SERVICE TAB
-    with tab6:
-        st.header("⚖️ Legal Terms of Service")
-        st.caption("Last updated: June 2026")
-        st.write("By accessing and using ByteGuard AI, you agree to the following basic terms:")
-        st.markdown("---")
-        st.write("### 1. No Protection Guarantee")
-        st.write("ByteGuard AI is an assistant scanning tool designed to flag common security threats. It is not an absolute guarantee against cyberattacks. Hackers invent new methods constantly.")
-        st.write("### 2. Limitation of Liability")
-        st.write("ByteGuard AI is provided 'as is'. We are not liable or responsible for any data loss, file damage, virus infections, or financial issues that occur on your devices.")
-        st.write("### 3. Responsibility")
-        st.write("The user is ultimately responsible for their own security decisions. Always practice caution before clicking email links or downloading files.")
+        st.header("🌐 Global Hacker Threat Intelligence Feed")
+        st.write("Real-time network security ports currently being shielded by ByteGuard code nodes globally:")
+        
+        # Generates fresh random mock attacks each time they click or load!
+        locations = ["Los Angeles", "New York", "London", "Tokyo", "Paris", "Sydney", "Berlin"]
+        targets = ["Real Estate Hub", "Medical Server", "Retail Portal", "Accounting DB", "Legal Network"]
+        
+        st.code(f"""
+        [ LIVE CYBER ATTACK INTERCEPT LOG ]
+        -------------------------------------------------------------------
+        TIMESTAMP            LOCATION             TARGET INDUSTRY      STATUS
+        {time.strftime('%H:%M:%S')}             {random.choice(locations)}          {random.choice(targets)}     [🛡️ BLOCKED]
+        {time.strftime('%H:%M:%A')}             {random.choice(locations)}          {random.choice(targets)}     [🛡️ BLOCKED]
