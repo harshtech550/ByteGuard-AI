@@ -75,7 +75,6 @@ if is_admin:
             st.info("🔄 Sentinel daemon intercepts live browser headers...")
             time.sleep(0.8)
             
-            # Grabs real live browser details from the person looking at the site!
             user_headers = st.context.headers
             user_agent = user_headers.get("User-Agent", "Unknown Device")
             user_loc = user_headers.get("Accept-Language", "Unknown")
@@ -109,13 +108,14 @@ else:
     if st.sidebar.button("Activate Premium Tier ($10/mo)"):
         st.sidebar.success("Stripe integration link coming soon! Ask your parent for setup help.")
 
-    # 🚀 FIVE TAB SYSTEM
-    tab1, tab2, tab3, tab4, tab5 = st.tabs([
+    # 🚀 SIX TAB SYSTEM (Now includes the Terms of Service!)
+    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
         "📧 EMAIL SCANNER (FREE)", 
         "📁 FILE SCANNER (PREMIUM)", 
         "⚡ SENTINEL ENGINE (PREMIUM)",
         "📊 BYTEGUARD VS NORTON",
-        "📖 HOW TO USE"
+        "📖 HOW TO USE",
+        "⚖️ TERMS OF SERVICE"
     ])
 
     with tab1:
@@ -172,9 +172,20 @@ else:
         st.markdown("---")
         st.write("### 1️⃣ Step 1: Keep This Tab Open")
         st.write("Bookmark this website page in your web browser so you can access it instantly whenever you look at your workload.")
-        
         st.write("### 2️⃣ Step 2: Paste Weird Messages")
         st.write("If you get an unexpected email or invoice link, copy the text and paste it directly into the **Email Scanner** tab.")
-        
         st.write("### 3️⃣ Step 3: Check Before You Click")
-        st.write("Click the Scan button. If our system shows a green box, you are clear. If it flashes red, delete the message immediately to save your files.")
+        st.write("Click the Scan button. If our system shows a green box, you are clear. If it flashes red, delete the message immediately.")
+
+    # ⚖️ LEGAL TERMS OF SERVICE TAB
+    with tab6:
+        st.header("⚖️ Legal Terms of Service")
+        st.caption("Last updated: June 2026")
+        st.write("By accessing and using ByteGuard AI, you agree to the following basic terms:")
+        st.markdown("---")
+        st.write("### 1. No Protection Guarantee")
+        st.write("ByteGuard AI is an assistant scanning tool designed to flag common security threats. It is not an absolute guarantee against cyberattacks. Hackers invent new methods constantly.")
+        st.write("### 2. Limitation of Liability")
+        st.write("ByteGuard AI is provided 'as is'. We are not liable or responsible for any data loss, file damage, virus infections, or financial issues that occur on your devices.")
+        st.write("### 3. Responsibility")
+        st.write("The user is ultimately responsible for their own security decisions. Always practice caution before clicking email links or downloading files.")
