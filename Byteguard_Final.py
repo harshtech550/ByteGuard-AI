@@ -55,7 +55,7 @@ if is_admin:
 
 # --- 🌐 IF LOGGED OUT, SHOW THE BEAUTIFUL CLIENT WEBPAGE ---
 else:
-    # 🎨 COOL ASCII STREET ART LOGO HERE
+    # COOL ASCII STREET ART LOGO
     st.code("""
  ██████╗ ██╗   ██╗████████╗███████╗ ██████╗ ██╗   ██╗ █████╗ ██████╗ ██████╗ 
  ██╔══██╗╚██╗ ██╔╝╚══██╔══╝██╔════╝██╔════╝ ██║   ██║██╔══██╗██╔══██╗██╔══██╗
@@ -64,6 +64,21 @@ else:
  ██████╔╝   ██║      ██║   ███████╗╚██████╔╝╚██████╔╝██║  ██║██║  ██║██████╔╝
  ╚══════╝   ╚═╝      ╚═╝   ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
                       [=== SECURITY SENTINEL ONLINE ===]
+    """)
+    
+    # 🎨 GREEN GRAFFITI SMILEY FACES
+    st.code("""
+      .  .               .  .
+
+     |  |             |  |
+    |  |             |  |
+   \____/           \____/
+  /      \         /      \\
+
+ |  O  O  |       |  O  O  |
+ |    ^   |       |    ^   |
+  \  --- /         \  --- /
+   \____/           \____/
     """)
     
     st.write("The lightweight defense shield for every business. Protect your files and links instantly.")
