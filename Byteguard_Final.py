@@ -69,8 +69,13 @@ else:
     if st.sidebar.button("Activate Premium Tier ($10/mo)"):
         st.sidebar.success("Stripe integration link coming soon! Ask your parent for setup help.")
 
-    # THREE TAB SYSTEM (Email Scanner, File Scanner, Comparison)
-    tab1, tab2, tab3 = st.tabs(["📧 EMAIL SCANNER (FREE)", "📁 FILE SCANNER (PREMIUM)", "📊 BYTEGUARD VS NORTON"])
+    # 🚀 FOUR TAB SYSTEM (Includes the Sentinel Mode!)
+    tab1, tab2, tab3, tab4 = st.tabs([
+        "📧 EMAIL SCANNER (FREE)", 
+        "📁 FILE SCANNER (PREMIUM)", 
+        "⚡ SENTINEL ENGINE (PREMIUM)",
+        "📊 BYTEGUARD VS NORTON"
+    ])
 
     with tab1:
         st.header("Free Email Check Interface")
@@ -100,6 +105,11 @@ else:
         st.file_uploader("Upload binary or directory files...", disabled=True)
 
     with tab3:
+        st.header("⚡ Sentinel Background Loop Engine")
+        st.error("🔒 FEATURE LOCKED: Sentinel 24/7 background monitoring requires premium tier tracking.")
+        st.write("Upgrade your plan to activate automated file log scans that run invisibly while your device sleeps or during your lunch break.")
+
+    with tab4:
         st.header("📊 Why Choose ByteGuard AI?")
         st.write("Here is exactly how we beat giant tech companies like Norton:")
         
