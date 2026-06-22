@@ -37,7 +37,7 @@ if is_admin:
     st.write("Full visibility and control over ByteGuard data streams.")
     st.markdown("---")
 
-    # LIVE METRICS GRID (Only visible to you!)
+    # LIVE METRICS GRID
     st.subheader("📊 LIVE SYSTEM METRICS")
     col1, col2, col3, col4 = st.columns(4)
     with col1:
@@ -55,8 +55,17 @@ if is_admin:
 
 # --- 🌐 IF LOGGED OUT, SHOW THE BEAUTIFUL CLIENT WEBPAGE ---
 else:
-    st.title("🛡️ ByteGuard AI Portal")
-    # 🌍 UPDATED LINE: Changed to 'for every business' to target the whole world!
+    # 🎨 COOL ASCII STREET ART LOGO HERE
+    st.code("""
+ ██████╗ ██╗   ██╗████████╗███████╗ ██████╗ ██╗   ██╗ █████╗ ██████╗ ██████╗ 
+ ██╔══██╗╚██╗ ██╔╝╚══██╔══╝██╔════╝██╔════╝ ██║   ██║██╔══██╗██╔══██╗██╔══██╗
+ ██████╔╝ ╚████╔╝    ██║   █████╗  ██║  ███╗██║   ██║███████║██████╔╝██║  ██║
+ ██╔══██╗  ╚██╔╝     ██║   ██╔══╝  ██║   ██║██║   ██║██╔══██║██╔══██╗██║  ██║
+ ██████╔╝   ██║      ██║   ███████╗╚██████╔╝╚██████╔╝██║  ██║██║  ██║██████╔╝
+ ╚══════╝   ╚═╝      ╚═╝   ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
+                      [=== SECURITY SENTINEL ONLINE ===]
+    """)
+    
     st.write("The lightweight defense shield for every business. Protect your files and links instantly.")
     st.markdown("---")
 
@@ -70,7 +79,7 @@ else:
     if st.sidebar.button("Activate Premium Tier ($10/mo)"):
         st.sidebar.success("Stripe integration link coming soon! Ask your parent for setup help.")
 
-    # 🚀 FOUR TAB SYSTEM (Includes Sentinel Mode and the updated Text!)
+    # 🚀 FOUR TAB SYSTEM
     tab1, tab2, tab3, tab4 = st.tabs([
         "📧 EMAIL SCANNER (FREE)", 
         "📁 FILE SCANNER (PREMIUM)", 
@@ -95,7 +104,7 @@ else:
                 st.session_state.stats["email_scans"] += 1
                 st.session_state.stats["safe_files"] += 1
 
-        # History Display Log matching your Netflix warning screenshot
+        # History Display Log
         st.subheader("🗓️ SCAN HISTORY EVENTS")
         st.warning("⚠️ Warning Event Logged:\n\nSender: 'support-update@netflix-verify-net.com'\nMessage: 'Hey Please buy our new 70$ plan for a week thank you, Netflix Team...'")
 
